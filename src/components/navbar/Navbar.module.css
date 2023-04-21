@@ -1,0 +1,37 @@
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    box-shadow:  0px 4px 8px rgba(77, 77, 77, 0.1);
+    z-index: 2;
+    padding: 16px 112px;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 32px;
+}
+
+.link {
+    text-decoration: none;
+    color: var(--color-text);
+}
+
+.actions {
+    display: flex;
+    gap: 32px;
+}
+
+.actions__auth {
+    display: flex;
+    gap: 16px;
+}

@@ -1,0 +1,22 @@
+
+.button {
+    padding: 12px 26px;
+    border: none;
+    border-radius: 24px;
+    cursor: pointer;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.small {
+    padding: 8px 26px;
+}
+
+.transparent {
+    background: transparent;
+    color: var(--color-text);
+}
+
+.shadow {
+    box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.1);
+}
