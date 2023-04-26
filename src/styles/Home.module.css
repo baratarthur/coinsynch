@@ -11,16 +11,109 @@
 }
 
 .section {
-  height: 800px;
-  border: 1px solid var(--color-primary);
-  background-color: azure;
+  padding: 120px;
+}
+
+.presentation {
+  padding: 0;
+}
+
+.presentation__content {
+  display: flex;
+  padding: 56px 0;
+}
+
+.presentation__info {
+  flex: 1;
+  
+  padding: 0 112px;
+  gap: 84px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.info__titles {
+  margin-bottom: var(--gutter);
+}
+
+.info__title {
+  color: var(--color-primary);
+  font-size: 48px;
+  margin-bottom: 24px;
+}
+
+.info__description {
+  font-size: 20px;
+}
+
+.info__keynames {
+  display: flex;
+  gap: var(--gutter);
+  list-style: none;
+}
+
+.info__keyname {
+  font-size: 20px;
+  padding: 4px 16px;
+  color: var(--color-primary);
+  background-color: var(--color-primary-100);
+}
+
+.presentation__carousel {
+  flex: 1;
+  height: 500px;
+  position: relative;
+}
+
+.wave {
+  height: 300px;
+  width: 100%;
+  background-image: url('/landing/waves_inverted.svg');
+  background-size: cover;
+  background-position: start center;
+  background-repeat: no-repeat;
+}
+
+.about {
+  display: flex;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #F7F7F7 100%);
+}
+
+.about__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--gutter);
+}
+
+.about__signup {
+  display: flex;
+  align-items: center;
+  padding: 32px;
+}
+
+.about__signup__group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gutter);
+}
+
+.section__topcryptos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section__topcryptos__title {
+  margin-bottom: 48px;
 }
 
 .subscription {
   display: flex;
   background-color: var(--color-primary-600);
-  background-image: url('/waves.svg');
-  background-size: contain;
+  background-image: url('/landing/waves.svg');
+  background-size: cover;
   background-position: start center;
   background-repeat: no-repeat;
 }
@@ -42,7 +135,7 @@
   color: var(--color-white);
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: var(--gutter);
   min-width: 380px;
 }
 

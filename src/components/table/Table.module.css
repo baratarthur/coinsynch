@@ -1,0 +1,29 @@
+.topcryptos__table {
+    width: 100%;
+}
+
+.topcryptos__table__header {
+    font-size: 14px;
+    padding: 0 16px;
+}
+
+.topcryptos__table__data {
+    padding: 24px 16px;
+}
+
+.topcryptos__table__viewmore {
+    margin-top: 32px;
+    color: var(--color-primary);
+}
+
+.positive {
+    color: var(--color-tertiary);
+}
+
+.negative {
+    color: var(--color-quartenary);
+}
+
+.accentbackground {
+    background-color: var(--color-secundary-100);
+}

@@ -1,0 +1,26 @@
+[
+    {
+        "img": "/landing/card_logo_1.svg",
+        "title": "For your company",
+        "subtitle": "Crypto Solutions",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam"
+    },
+    {
+        "img": "/landing/card_logo_2.svg",
+        "title": "For your company",
+        "subtitle": "Crypto Solutions",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam"
+    },
+    {
+        "img": "/landing/card_logo_3.svg",
+        "title": "For your company",
+        "subtitle": "Crypto Solutions",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam"
+    },
+    {
+        "img": "/landing/card_logo_4.svg",
+        "title": "For your company",
+        "subtitle": "Crypto Solutions",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam"
+    }
+]

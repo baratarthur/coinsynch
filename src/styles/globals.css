@@ -2,6 +2,7 @@
 
 :root {
   --border-radius: 12px;
+  --gutter: 32px;
   --font-family: 'Roboto', sans-serif;
 
   --color-white: #FFFFFF;
@@ -110,6 +111,11 @@ body {
 body {
   scroll-behavior: smooth;
   color: var(--color-text);
+}
+
+table, th, td {
+  border: none;
+  border-spacing: 0;
 }
 
 @media (prefers-color-scheme: dark) {

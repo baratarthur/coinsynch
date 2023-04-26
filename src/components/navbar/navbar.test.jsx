@@ -5,7 +5,7 @@ import { Nav } from '.';
 
 describe('Navbar', () => {
 
-  test('renders correctly', () => {
+  it('should renders correctly', () => {
     const { getByTestId } = render(<Nav />);
     const footer = getByTestId('navbar');
     expect(footer).toBeInTheDocument();

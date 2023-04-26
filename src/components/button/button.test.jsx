@@ -5,13 +5,13 @@ import { Button } from '.';
 
 describe('Common button', () => {
 
-  test('renders correctly', () => {
+  it('should renders correctly', () => {
     const { getByTestId } = render(<Button />);
     const button = getByTestId('common-button');
     expect(button).toBeInTheDocument();
   });
 
-  test('should call callback function on click', () => {
+  it('should call callback function on click', () => {
     const handleClick = jest.fn();
 
     const { getByTestId } = render(<Button click={handleClick}/>);
@@ -21,7 +21,7 @@ describe('Common button', () => {
     expect(handleClick).toHaveBeenCalled();
   });
 
-  test('should display props label', () => {
+  it('should display props label', () => {
     const { getByText } = render(<Button label="test"/>);
     const buttonLabel = getByText('test')
 

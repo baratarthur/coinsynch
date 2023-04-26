@@ -1,0 +1,23 @@
+
+.biggroup {
+    font-size: 20px;
+}
+
+.group {
+    font-size: 16px;
+}
+
+.group__subtitle {
+    color: var(--color-primary);
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.group__title {
+    font-size: 1.5em;
+    margin-bottom: 8px;
+}
+
+.group__description {
+    font-size: 0.875em;
+}

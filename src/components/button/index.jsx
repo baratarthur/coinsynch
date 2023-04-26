@@ -20,6 +20,7 @@ export function Button(props) {
         <button data-testid='common-button'
             role='button'
             className={buttonStyles}
+            style={props.style || {}}
             onClick={handleClick}>
             {props.label}
         </button>
