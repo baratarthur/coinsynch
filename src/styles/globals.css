@@ -5,6 +5,9 @@
   --gutter: 32px;
   --font-family: 'Roboto', sans-serif;
 
+  --tablet-width: 768px;
+  --mobile-width: 320px;
+
   --color-white: #FFFFFF;
   --color-black: #000000;
   --color-text: #5D6670;
