@@ -1,0 +1,7 @@
+.positive {
+    color: var(--color-tertiary);
+}
+
+.negative {
+    color: var(--color-quartenary);
+}

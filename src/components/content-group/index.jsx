@@ -13,7 +13,7 @@ export function ContentGroup({
     }, [useBigGroup]);
 
     return (
-        <div className={groupClass}>
+        <div data-testid='content-group' className={groupClass}>
             {subtitle &&
                 <h4 className={styles.group__subtitle}
                     style={subscribeStylesWith}>

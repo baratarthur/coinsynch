@@ -13,12 +13,13 @@ export function Button(props) {
     }, [props]);
     
     const handleClick = () => {
-        props.click();
+        if(props.click) props.click();
     }
 
     return (
         <button data-testid='common-button'
-            role='button'
+            role={props.role || 'button'}
+            disabled={props.disabled}
             className={buttonStyles}
             style={props.style || {}}
             onClick={handleClick}>

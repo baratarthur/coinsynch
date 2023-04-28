@@ -1,8 +1,48 @@
 {
-    "leads": [
-        {"id": 1, "email": "arthurpbarata@gmail.com"}
-    ],
-    "users": [
-        {"id": 1, "name": "Arthur Barata", "email": "arthurpbarata@gmail.com", "password": "123456"}
-    ]
+  "leads": [
+    {
+      "id": 1,
+      "email": "arthurpbarata@gmail.com"
+    },
+    {
+      "email": "arthurpbarata@gmail.com",
+      "id": 2
+    },
+    {
+      "email": "a@b.c",
+      "id": 3
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "Arthur Barata",
+      "email": "arthurpbarata@gmail.com",
+      "password": "123456"
+    },
+    {
+      "name": "arthur",
+      "email": "arthur",
+      "password": "1234",
+      "id": 2
+    },
+    {
+      "name": "arthur",
+      "email": "arthur",
+      "password": "1234",
+      "id": 3
+    },
+    {
+      "name": "teste",
+      "email": "teste",
+      "password": "123456",
+      "id": 4
+    },
+    {
+      "name": "teste 4",
+      "email": "teste 4",
+      "password": "123456",
+      "id": 5
+    }
+  ]
 }

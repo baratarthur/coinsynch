@@ -1,10 +1,14 @@
-import { CoinContextProvider } from '@/core/context/coin-context'
+import { AuthContextProvider } from '@/core/context/auth'
+import { CoinContextProvider } from '@/core/context/coin'
+
 import '@/styles/globals.css'
 
 export default function App({ Component, pageProps }) {
   return (
-    <CoinContextProvider>
-      <Component {...pageProps} />
-    </CoinContextProvider>
+    <AuthContextProvider>
+      <CoinContextProvider>
+        <Component {...pageProps} />
+      </CoinContextProvider>
+    </AuthContextProvider>
   )
 }

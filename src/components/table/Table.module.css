@@ -16,14 +16,6 @@
     color: var(--color-primary);
 }
 
-.positive {
-    color: var(--color-tertiary);
-}
-
-.negative {
-    color: var(--color-quartenary);
-}
-
 .accentbackground {
     background-color: var(--color-secundary-100);
 }

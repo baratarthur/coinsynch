@@ -2,33 +2,15 @@ import { useMemo, useState } from "react";
 import { Button } from "../button";
 
 import styles from './Table.module.css'
+import { formatDollar, formatPercentage, getChangeClass } from "@/core/utils/transformers";
 
 export function TopCoinsTable({ data, seeMoreHandler }) {
     const [viewMore, setViewMore] = useState(false);
-
-    const getChangeClass = (value) => {
-        if(value < 0) return styles.negative;
-    
-        return styles.positive;
-    }
 
     const getBackground = (index) => {
         if(index % 2 !== 0) return styles.accentbackground;
 
         return '';
-    }
-
-    const formatDollar = (value) => {
-        return Number(value).toLocaleString("en-US", {
-            style: "currency",
-            currency: "USD",
-        });
-    }
-
-    const formatPercentage = (value) => {
-        if(value > 0) return `+${value}%`;
-
-        return `${value}%`;
     }
 
     const viewMoreHandler = () => {
@@ -40,7 +22,8 @@ export function TopCoinsTable({ data, seeMoreHandler }) {
 
     return (
         <>
-            <table className={styles.topcryptos__table}>
+            <table data-testid='top-coins-table'
+                className={styles.topcryptos__table}>
                 <thead>
                     <tr>
                         <td className={styles.topcryptos__table__header}>

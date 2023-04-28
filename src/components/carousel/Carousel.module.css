@@ -1,0 +1,22 @@
+
+.carousel {
+    overflow: hidden;
+    width: 200px;
+}
+
+.carousel__slides {
+    display: flex;
+    gap: calc(var(--gutter) / 2);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: fit-content;
+    transition: 6s;
+    animation-fill-mode: backwards;
+}
+
+.carousel__item {
+    width: 200px;
+    display: flex;
+    gap: calc(var(--gutter) / 4);
+}

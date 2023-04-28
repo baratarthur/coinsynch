@@ -1,4 +1,5 @@
-import { useContext, useEffect, useRef } from 'react'
+import { useContext, useEffect, useRef, useState } from 'react'
+import Image from 'next/image'
 import Head from 'next/head'
 
 import styles from '@/styles/Home.module.css'
@@ -7,21 +8,38 @@ import { Button } from '@/components/button'
 import { CopyrightFooter } from '@/components/copyright-footer'
 import { Nav } from '@/components/navbar'
 import { Card } from '@/components/card'
+import { TopCoinsTable } from '@/components/table'
+import { ContentGroup } from '@/components/content-group'
+import { SignInModal } from '@/components/modal/sign-in'
+import { SignUpModal } from '@/components/modal/sign-up'
 
-import { CoinContext } from '@/core/context/coin-context'
+import { CoinContext } from '@/core/context/coin'
 
 import presentationInfoJson from '@/core/assets/presentation-info.json'
 import aboutCardsJson from '@/core/assets/about-us-cards.json'
 import aboutInfoJson from '@/core/assets/about-us-info.json'
 import subscriptionInfoJson from '@/core/assets/subscription-info.json'
 
-import { TopCoinsTable } from '@/components/table'
-import { ContentGroup } from '@/components/content-group'
-import Image from 'next/image'
+import { useModal } from '@/core/hooks/use-modal'
+
+import { usersApi } from '@/core/api'
 
 export default function Home() {
   const alreadyFetchRef = useRef(false);
   const {fetchCoinsData, seeMoreCoins, coins} = useContext(CoinContext);
+
+  const [loading, setLoading] = useState(false);
+  
+  const [
+    isSignInModalOpen,
+    showSignInModal,
+    closeSignInModal
+  ] = useModal();
+  const [
+    isSignUpModalOpen,
+    showSignUpModal,
+    closeSignUpModal
+  ] = useModal();
 
   useEffect(() => {
     if(alreadyFetchRef.current) return;
@@ -29,7 +47,28 @@ export default function Home() {
     fetchCoinsData().then(() => {
       alreadyFetchRef.current = true;
     });
-  }, [fetchCoinsData])
+  }, [fetchCoinsData]);
+
+  const subscribe = (e) => {
+    e.preventDefault();
+    const email = e.target.email.value
+    setLoading(true);
+
+    usersApi.post('/leads', { email })
+      .then(() => {
+        setLoading(false);
+      })
+  }
+
+  const switchToSignUp = () => {
+    closeSignInModal();
+    showSignUpModal();
+  }
+
+  const switchToSignIn = () => {
+    closeSignUpModal();
+    showSignInModal();
+  }
 
   return (
     <>
@@ -40,7 +79,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.container}>
-        <Nav />
+        <Nav onSignIn={showSignInModal} onSignUp={showSignUpModal}/>
         <article className={styles.content}>
           <section id='presentation'
             className={`${styles.section} ${styles.presentation}`}>
@@ -57,7 +96,7 @@ export default function Home() {
                   </div>
                   <Button style={{width: '280px', fontSize: '16px'}}
                     label="SIGN UP NOW ->"
-                    click={() => {}}/>
+                    click={showSignUpModal}/>
                 </div>
                 <ul className={styles.info__keynames}>
                   <li className={styles.info__keyname}>Cryptos</li>
@@ -92,7 +131,7 @@ export default function Home() {
                   description={aboutInfoJson.description}/>
                 <Button style={{maxWidth: '180px', fontSize: '16px'}}
                   label="Sign up now"
-                  click={() => {}}/>
+                  click={showSignUpModal}/>
               </div>
             </div>
           </section>
@@ -115,25 +154,34 @@ export default function Home() {
                 description={subscriptionInfoJson.description}/>
             </div>
             <div className={styles.subscription__block}>
-              <form className={styles.subscription__form}>
+              <form className={styles.subscription__form}
+                onSubmit={subscribe}>
                 <div className={styles.subscription__form__group}>
                   <label>Email</label>
                   <input id='email'
                     className={styles.subscription__form__input}
                     name='email'
                     type='email'
+                    disabled={loading}
                     placeholder='Email'/>
                 </div>
                 <Button shadow
                   label='Subscribe'
-                  style={{fontSize: '16px'}}
-                  click={()=>{}}/>
+                  role='submit'
+                  disabled={loading}
+                  style={{fontSize: '16px'}}/>
               </form>
             </div>
           </div>
           <CopyrightFooter />
         </footer>
       </main>
+      <SignInModal isSignInModalOpen={isSignInModalOpen}
+        closeSignInModal={closeSignInModal}
+        switchToSignUp={switchToSignUp}/>
+      <SignUpModal isSignUpModalOpen={isSignUpModalOpen}
+        closeSignUpModal={closeSignUpModal}
+        switchToSignIn={switchToSignIn}/>
     </>
   )
 }

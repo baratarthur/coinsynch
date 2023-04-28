@@ -1,0 +1,20 @@
+.modal__title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: normal;
+    gap: 8px;
+}
+
+.signup {
+    display: flex;
+    flex-direction: column;
+    margin-top: 24px;
+    gap: 24px;
+}
+
+.signup__input {
+    padding: 16px 36px;
+    border-radius: 6px;
+    border: 1px solid var(--color-secundary-300);
+}
